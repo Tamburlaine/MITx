@@ -8,6 +8,7 @@ function calculate(text) {
     } catch(err){
         return err; //error message will be printed as answer
     }
+    return val;
 //    read_operand(tokens);
 //    return JSON.stringify(tokens);
 }
@@ -24,9 +25,7 @@ function setup_calc(div){
 }
 
 function read_operand(token_array) {
-    var num = token_array[0];
-    token_array.shift();
-    console.log(num);
+    var num = token_array.shift();
     try{
         if(isNaN(parseInt(num)))  throw "not a number";
     }
@@ -47,35 +46,31 @@ function evaluate(token_array){
     }
     var value = read_operand(token_array);
     while(token_array.length > 0){
-        var operator = read_operand(token_array);
-        console.log(operator);
+        var operator = token_array[0];
         token_array.shift();
-        try{
-            if(operator !== '+' || '-' || '*' || '/')  throw "unrecognized operand";
-            if(token_array.length === 0)    throw "missing operand";
-        }
-        catch(err){
-            alert("shit got real");
-        }
+        console.log('the value is ' + value);
+        console.log('the operator is ' + operator);
         var temp = read_operand(token_array);
+        console.log(temp);
         switch(operator){
-            case "+":
-                value = value + temp;
+            case '+':
+                value = parseInt(value) + parseInt(temp);
+                console.log("please b 6 " + value);
                 break;
-            case "-":
-                value = value - temp;
+            case '-':
+                value = parseInt(value) - parseInt(temp);
                 break;
-            case "*":
-                value = value*temp;
+            case '*':
+                value = parseInt(value) * parseInt(temp);
                 break;
-            case "/":
-                value = value/temp;
+            case '/':
+                value = parseInt(value) / parseInt(temp);
                 break;
             default:
                 value = "I do not recognize this";
         }
-        return value
     }
+    return value;
 }
 
 //this will be called once when the entire document is loaded from the server
