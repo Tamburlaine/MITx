@@ -26,6 +26,29 @@ function setup_calc(div){
 
 function read_operand(token_array) {
     var num = token_array.shift();
+    console.log("ro num is "+ num);
+    if (num === '(') {
+        var subexpr = [];
+        console.log("token_array is " + token_array);
+            while (token_array.length >= 0){
+                if (token_array[0] === ')'){
+                    console.log("the subexpression is: "+ subexpr);
+                    console.log("the token_array is: " + token_array);
+                    num = evaluate(subexpr);
+                    console.log("the result is: "+ num);
+                    token_array.shift();
+                    break;
+                }
+                else if (token_array.length === 0){
+                    throw "you never closed your parens";
+                }
+                else{
+                    console.log("about to shift: ta is " + token_array);
+                    subexpr.push(token_array[0]);
+                    token_array.shift();
+                }
+            }
+    }
     try{
         if(isNaN(parseInt(num)))  throw "not a number";
     }
@@ -48,14 +71,13 @@ function evaluate(token_array){
     while(token_array.length > 0){
         var operator = token_array[0];
         token_array.shift();
-        console.log('the value is ' + value);
-        console.log('the operator is ' + operator);
         var temp = read_operand(token_array);
-        console.log(temp);
+        console.log("value: " + value);
+        console.log("operator: " + operator);
+        console.log("temp: " + temp);
         switch(operator){
             case '+':
                 value = parseInt(value) + parseInt(temp);
-                console.log("please b 6 " + value);
                 break;
             case '-':
                 value = parseInt(value) - parseInt(temp);
