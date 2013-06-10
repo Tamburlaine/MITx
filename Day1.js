@@ -21,7 +21,7 @@ function setup_calc(div){
        output.text(String(calculate(input.val()))); 
     });
     
-    $(div).append(input, button, output)
+    $(div).append(input, button, output);
 }
 
 function read_operand(token_array) {
@@ -29,28 +29,28 @@ function read_operand(token_array) {
     console.log("ro num is "+ num);
     if (num === '(') {
         var subexpr = [];
-        console.log("token_array is " + token_array);
-            while (token_array.length >= 0){
-                if (token_array[0] === ')'){
-                    console.log("the subexpression is: "+ subexpr);
-                    console.log("the token_array is: " + token_array);
-                    num = evaluate(subexpr);
-                    console.log("the result is: "+ num);
-                    token_array.shift();
-                    break;
-                }
-                else if (token_array.length === 0){
-                    throw "you never closed your parens";
-                }
-                else{
-                    console.log("about to shift: ta is " + token_array);
-                    subexpr.push(token_array[0]);
-                    token_array.shift();
-                }
-            }
-    }
+   console.log("token_array is " + token_array);
+        while (token_array.length >= 0){
+               if (token_array[0] === ')'){
+                   console.log("the subexpression is: "+ subexpr);
+                   console.log("the token_array is: " + token_array);
+                   num = evaluate(subexpr);
+                   console.log("the result is: "+ num);
+                   token_array.shift();
+                   return num;
+               }
+               else if (token_array.length === 0){
+                   throw "you never closed your parens";
+               }
+               else{
+                   console.log("about to shift: ta is " + token_array);
+                   subexpr.push(token_array[0]);
+                   token_array.shift();
+               }
+           }
+        }
     try{
-        if(isNaN(parseInt(num)))  throw "not a number";
+        if(isNaN(parseInt(num, 10)))  throw "not a number";
     }
     catch(err){
         var txt = "there is an error";
