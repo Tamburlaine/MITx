@@ -1,0 +1,29 @@
+.calculator{
+    width: 425px;
+    height: 518px;
+    background-color: #B4B4B4;
+}
+
+.calculator button{
+    background-color: #D4D4D4;
+    width: 90px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.calculator .output{
+    background-color: #D2E6A9;
+    height: 50px;
+    width: 340px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    border-style: solid;
+    border-color: #B4B4B4;
+    border-width: 10px;
+    border-radius: 20px;
+}
