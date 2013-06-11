@@ -1,0 +1,60 @@
+/* Stylesheet for calculator */
+
+h1 {
+    font-size: 48pt;
+    text-align: center;
+    font-family: fantasy;
+}
+
+/* we're making a new class called calculator */
+/*this will apply to all the nodes labelled calculator! */
+.calculator{
+    font-size:24pt;
+}
+
+.calculator button {        /*we're applying these rules to all the buttons that are inside class calculator*/
+    font-size: 18pt;
+    width: 200px;
+    height: 60px;
+    left: 20px;
+    top: 20px; /*position relative -- this is moving it WITHOUT changing the other things around it
+    padding: 5px;  /*padding is within the box, margin is outside the box*/
+    margin: 30px;
+}
+
+.calculator input[type = "text"]{
+    font-size: 16pt;
+    width: 600px;
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.calculator div.output{ /*this is only going to specify div outputs (which turns out to be exactly the same thing as just output in this case) */
+    background-color: #D7D7FC;
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    padding-left: 55px;
+    padding-right: 55px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 20px;
+/*    visibility: hidden; This makes the element occupy space, but NO ONE CAN SEE IT o_o */
+}
+
+.calculator div.output:empty{
+    display: none;
+}
+
+/*.calculator input[type = "text"]:hover{*/
+/*    border-width: 5px;*/
+/*}*/
+
+.calculator input[type = "text"]:focus{
+    border-width: 3px;
+}
+
+/*#calc1 button{      /*now we're just applying the rule to the calc1 instance of calculator
+/*    font-size: 12pt;*/
+/*}*/

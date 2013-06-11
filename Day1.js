@@ -15,7 +15,7 @@ function calculate(text) {
 
 function setup_calc(div){
     var input = $('<input></input>',{type: "text", size: 50});
-    var output = $('<div></div>');
+    var output = $('<div class = "output"></div>');      //we could also add the keyword parameters like we did for input to make a class
     var button = $('<button>Calculate</button>');
     button.bind("click", function(){
        output.text(String(calculate(input.val()))); 
@@ -48,6 +48,9 @@ function read_operand(token_array) {
                    token_array.shift();
                }
            }
+        }else if(num === '-'){
+            num = token_array[0] * -1;
+            token_array.shift();
         }
     try{
         if(isNaN(parseInt(num, 10)))  throw "not a number";

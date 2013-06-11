@@ -26,6 +26,7 @@ function setup_calc(div){
         console.log(token_array);
         var result = evaluate(token_array);
         $(".output").html(result);
+        token_array = [result];
         return result;
         // output.text(String(calculate(input.val())));
     });
