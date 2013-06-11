@@ -29,7 +29,7 @@ function read_operand(token_array) {
     console.log("ro num is "+ num);
     if (num === '(') {
         var subexpr = [];
-   console.log("token_array is " + token_array);
+        console.log("token_array is " + token_array);
         while (token_array.length >= 0){
                if (token_array[0] === ')'){
                    console.log("the subexpression is: "+ subexpr);
