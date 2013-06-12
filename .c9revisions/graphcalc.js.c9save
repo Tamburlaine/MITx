@@ -1,0 +1,109 @@
+{"ts":1371055596488,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1371055607969,"patch":[[{"diffs":[[1,"var graphcalc = (function () {\r\n    var exports = {};  // functions,vars accessible from outside\r\n   \r\n    function graph(canvas,expression,x1,x2) {\r\n        … your code to plot the value of expression as x varies from x1 to x2 …\r\n    }\r\n   \r\n    function setup(div) {\r\n        … your code to fill the div with the appropriate HTML components and\r\n         to call graph() with the appropriate arguments in response to a click\r\n         of the Plot button … \r\n    }\r\n    exports.setup = setup;\r\n   \r\n    return exports;\r\n}());\r\n// setup all the graphcalc divs in the document\r\n$(document).ready(function() {\r\n    $('.graphcalc').each(function() {\r\n        graphcalc.setup(this);  \r\n    });\r\n});"]],"start1":0,"start2":0,"length1":0,"length2":694}]],"length":694,"saved":false}
+{"ts":1371060435851,"patch":[[{"diffs":[[0," button "],[-1,"…"],[0," \r\n    }"]],"start1":448,"start2":448,"length1":17,"length2":16}]],"length":693,"saved":false}
+{"ts":1371060436992,"patch":[[{"diffs":[[0," button "],[1,"/*"],[0," \r\n    }"]],"start1":448,"start2":448,"length1":16,"length2":18}]],"length":695,"saved":false}
+{"ts":1371060439120,"patch":[[{"diffs":[[0,"tup(div) {\r\n    "],[-1,"    …"],[0," your code to fi"]],"start1":258,"start2":258,"length1":37,"length2":32}]],"length":690,"saved":false}
+{"ts":1371060439839,"patch":[[{"diffs":[[0,"{\r\n     "],[1,"    "],[0,"your cod"]],"start1":267,"start2":267,"length1":16,"length2":20}]],"length":694,"saved":false}
+{"ts":1371060440877,"patch":[[{"diffs":[[0,"        "],[1,"/*"],[0," your co"]],"start1":270,"start2":270,"length1":16,"length2":18}]],"length":696,"saved":false}
+{"ts":1371060444818,"patch":[[{"diffs":[[0," button "],[-1,"/"],[0,"* \r\n    "]],"start1":449,"start2":449,"length1":17,"length2":16}]],"length":695,"saved":false}
+{"ts":1371060445917,"patch":[[{"diffs":[[0,"button *"],[1,"/"],[0," \r\n    }"]],"start1":450,"start2":450,"length1":16,"length2":17}]],"length":696,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1371060732159,"patch":[[{"diffs":[[0,"        "],[1,"/*"],[0,"… your c"]],"start1":150,"start2":150,"length1":16,"length2":18}]],"length":698,"saved":false}
+{"ts":1371060734265,"patch":[[{"diffs":[[0," to x2 …"],[1,"/*"],[0,"\r\n    }\r"]],"start1":223,"start2":223,"length1":16,"length2":18}]],"length":700,"saved":false}
+{"ts":1371063052353,"patch":[[{"diffs":[[0," to x2 …"],[-1,"/*"],[0,"\r\n    }\r"]],"start1":223,"start2":223,"length1":18,"length2":16}]],"length":698,"saved":false}
+{"ts":1371063056710,"patch":[[{"diffs":[[0," {\r\n"],[-1,"        /*… your code to plot the value of expression as x varies from x1 to x2 …\r\n"],[0,"    "]],"start1":146,"start2":146,"length1":91,"length2":8}]],"length":615,"saved":false}
+{"ts":1371063067144,"patch":[[{"diffs":[[0,"n,x1,x2) {\r\n"],[1,"        \r\n"],[0,"    }\r\n   \r\n"]],"start1":138,"start2":138,"length1":24,"length2":34}]],"length":625,"saved":false}
+{"ts":1371063121636,"patch":[[{"diffs":[[0,"    "],[-1,"/* your code to fill the div with the appropriate HTML components and\r\n         to call graph() with the appropriate arguments in response to a click\r\n         of the Plot button */ "],[1,"equals.bind(\"click\", function(){\r\n        console.log(token_array);\r\n        var result = evaluate(token_array);\r\n        $(\".output\").html(result);\r\n        token_array = [result];\r\n        return result;\r\n        // output.text(String(calculate(input.val())));\r\n    });"],[0,"\r\n  "]],"start1":203,"start2":203,"length1":190,"length2":279}]],"length":714,"saved":false}
+{"ts":1371063125773,"patch":[[{"diffs":[[0,"        "],[1,"    "],[0,"console."]],"start1":241,"start2":241,"length1":16,"length2":20}]],"length":718,"saved":false}
+{"ts":1371063127093,"patch":[[{"diffs":[[0,");\r\n        "],[1,"    "],[0,"var result ="]],"start1":276,"start2":276,"length1":24,"length2":28}]],"length":722,"saved":false}
+{"ts":1371063128304,"patch":[[{"diffs":[[0,"        "],[1,"    "],[0,"$(\".outp"]],"start1":329,"start2":329,"length1":16,"length2":20}]],"length":726,"saved":false}
+{"ts":1371063129401,"patch":[[{"diffs":[[0,"        "],[1,"    "],[0,"token_ar"]],"start1":369,"start2":369,"length1":16,"length2":20}]],"length":730,"saved":false}
+{"ts":1371063130696,"patch":[[{"diffs":[[0,"];\r\n        "],[1,"    "],[0,"return resul"]],"start1":402,"start2":402,"length1":24,"length2":28}]],"length":734,"saved":false}
+{"ts":1371063133884,"patch":[[{"diffs":[[0,"t;\r\n"],[-1,"        // output.text(String(calculate(input.val())));\r\n"],[0,"    "]],"start1":430,"start2":430,"length1":65,"length2":8}]],"length":677,"saved":false}
+{"ts":1371063136331,"patch":[[{"diffs":[[0,"esult;\r\n"],[1,"    "],[0,"    });\r"]],"start1":426,"start2":426,"length1":16,"length2":20}]],"length":681,"saved":false}
+{"ts":1371063139964,"patch":[[{"diffs":[[0,"    "],[-1,"console.log(token_array)"],[0,";\r\n "]],"start1":249,"start2":249,"length1":32,"length2":8}]],"length":657,"saved":false}
+{"ts":1371063142216,"patch":[[{"diffs":[[0,"    "],[-1,"equals"],[1,"plot"],[0,".bin"]],"start1":203,"start2":203,"length1":14,"length2":12}]],"length":655,"saved":false}
+{"ts":1371063144551,"patch":[[{"diffs":[[0,"        "],[-1,";"],[0,"\r\n      "]],"start1":243,"start2":243,"length1":17,"length2":16}]],"length":654,"saved":false}
+{"ts":1371063159520,"patch":[[{"diffs":[[0,"tup(div) {\r\n"],[1,"        \r\n"],[0,"        plot"]],"start1":187,"start2":187,"length1":24,"length2":34}]],"length":664,"saved":false}
+{"ts":1371063162372,"patch":[[{"diffs":[[0,"div) {\r\n        "],[1,"var equals = $(\"#equals\");"],[0,"\r\n        plot.b"]],"start1":191,"start2":191,"length1":32,"length2":58}]],"length":690,"saved":false}
+{"ts":1371063166392,"patch":[[{"diffs":[[0,"    var "],[-1,"equals"],[1,"plot"],[0," = $(\"#e"]],"start1":203,"start2":203,"length1":22,"length2":20}]],"length":688,"saved":false}
+{"ts":1371063194654,"patch":[[{"diffs":[[0,"){\r\n"],[-1,"            \r\n"],[0,"    "]],"start1":269,"start2":269,"length1":22,"length2":8}]],"length":674,"saved":false}
+{"ts":1371063202917,"patch":[[{"diffs":[[0,"t = "],[-1,"evaluate"],[1,"graph"],[0,"(tok"]],"start1":294,"start2":294,"length1":16,"length2":13}]],"length":671,"saved":false}
+{"ts":1371063205238,"patch":[[{"diffs":[[0,"#equals\");\r\n"],[1,"        var\r\n"],[0,"        plot"]],"start1":221,"start2":221,"length1":24,"length2":37}]],"length":684,"saved":false}
+{"ts":1371063206997,"patch":[[{"diffs":[[0,"     var"],[1," input ="],[0,"\r\n      "]],"start1":236,"start2":236,"length1":16,"length2":24}]],"length":692,"saved":false}
+{"ts":1371063207936,"patch":[[{"diffs":[[0," input ="],[1," "],[0,"\r\n      "]],"start1":244,"start2":244,"length1":16,"length2":17}]],"length":693,"saved":false}
+{"ts":1371063213184,"patch":[[{"diffs":[[0,"input = "],[1,"$()"],[0,"\r\n      "]],"start1":245,"start2":245,"length1":16,"length2":19}]],"length":696,"saved":false}
+{"ts":1371063214541,"patch":[[{"diffs":[[0,"put = $("],[1,"\"\""],[0,")\r\n     "]],"start1":247,"start2":247,"length1":16,"length2":18}]],"length":698,"saved":false}
+{"ts":1371063216545,"patch":[[{"diffs":[[0,"ut = $(\""],[1,"#input"],[0,"\")\r\n    "]],"start1":248,"start2":248,"length1":16,"length2":22}]],"length":704,"saved":false}
+{"ts":1371063217984,"patch":[[{"diffs":[[0,"#input\")"],[1,";"],[0,"\r\n      "]],"start1":256,"start2":256,"length1":16,"length2":17}]],"length":705,"saved":false}
+{"ts":1371063240588,"patch":[[{"diffs":[[0,"t = $(\"#"],[-1,"input"],[1,"\\"],[0,"\");\r\n   "]],"start1":249,"start2":249,"length1":21,"length2":17}]],"length":701,"saved":false}
+{"ts":1371063241177,"patch":[[{"diffs":[[0,"$(\"#"],[-1,"\\"],[0,"\");\r"]],"start1":253,"start2":253,"length1":9,"length2":8}]],"length":700,"saved":false}
+{"ts":1371063242635,"patch":[[{"diffs":[[0,"ut = $(\""],[-1,"#"],[1,"f(x)"],[0,"\");\r\n   "]],"start1":248,"start2":248,"length1":17,"length2":20}]],"length":703,"saved":false}
+{"ts":1371063244731,"patch":[[{"diffs":[[0,"$(\"f(x)\");\r\n"],[1,"        \r\n"],[0,"        plot"]],"start1":253,"start2":253,"length1":24,"length2":34}]],"length":713,"saved":false}
+{"ts":1371063247909,"patch":[[{"diffs":[[0,"var "],[-1,"inpu"],[1,"x_func"],[0,"t = "]],"start1":241,"start2":241,"length1":12,"length2":14}]],"length":715,"saved":false}
+{"ts":1371063251260,"patch":[[{"diffs":[[0,");\r\n        "],[1,"var x_min = "],[0,"\r\n        pl"]],"start1":263,"start2":263,"length1":24,"length2":36}]],"length":727,"saved":false}
+{"ts":1371063252162,"patch":[[{"diffs":[[0,"x_min = "],[1,"#"],[0,"\r\n      "]],"start1":279,"start2":279,"length1":16,"length2":17}]],"length":728,"saved":false}
+{"ts":1371063252956,"patch":[[{"diffs":[[0,"x_min = "],[-1,"#"],[0,"\r\n      "]],"start1":279,"start2":279,"length1":17,"length2":16}]],"length":727,"saved":false}
+{"ts":1371063287994,"patch":[[{"diffs":[[0,"x_min = "],[1,"$()"],[0,"\r\n      "]],"start1":279,"start2":279,"length1":16,"length2":19}]],"length":730,"saved":false}
+{"ts":1371063288912,"patch":[[{"diffs":[[0,"min = $("],[1,"\"\""],[0,")\r\n     "]],"start1":281,"start2":281,"length1":16,"length2":18}]],"length":732,"saved":false}
+{"ts":1371063291044,"patch":[[{"diffs":[[0,"in = $(\""],[1,"x_min"],[0,"\")\r\n    "]],"start1":282,"start2":282,"length1":16,"length2":21}]],"length":737,"saved":false}
+{"ts":1371063294456,"patch":[[{"diffs":[[0,"\"x_min\")"],[1,";\r\n        var x_max = "],[0,"\r\n      "]],"start1":289,"start2":289,"length1":16,"length2":39}]],"length":760,"saved":false}
+{"ts":1371063295486,"patch":[[{"diffs":[[0,"x_max = "],[1,"$()"],[0,"\r\n      "]],"start1":312,"start2":312,"length1":16,"length2":19}]],"length":763,"saved":false}
+{"ts":1371063296947,"patch":[[{"diffs":[[0,"max = $("],[1,"\"\""],[0,")\r\n     "]],"start1":314,"start2":314,"length1":16,"length2":18}]],"length":765,"saved":false}
+{"ts":1371063298665,"patch":[[{"diffs":[[0,"ax = $(\""],[1,"x_max"],[0,"\")"],[1,";"],[0,"\r\n      "]],"start1":315,"start2":315,"length1":18,"length2":24}]],"length":771,"saved":false}
+{"ts":1371063363841,"patch":[[{"diffs":[[0,"ct = $(\""],[1,"#"],[0,"f(x)\");\r"]],"start1":250,"start2":250,"length1":16,"length2":17}]],"length":772,"saved":false}
+{"ts":1371063365341,"patch":[[{"diffs":[[0,"in = $(\""],[1,"#"],[0,"x_min\");"]],"start1":283,"start2":283,"length1":16,"length2":17}]],"length":773,"saved":false}
+{"ts":1371063366627,"patch":[[{"diffs":[[0,"ax = $(\""],[1,"#"],[0,"x_max\");"]],"start1":317,"start2":317,"length1":16,"length2":17}]],"length":774,"saved":false}
+{"ts":1371063371535,"patch":[[{"diffs":[[0,"x_max = "],[1,"String"],[0,"$(\"#x_ma"]],"start1":314,"start2":314,"length1":16,"length2":22}]],"length":780,"saved":false}
+{"ts":1371063372838,"patch":[[{"diffs":[[0,"= String"],[1,"("],[0,"$(\"#x_ma"]],"start1":320,"start2":320,"length1":16,"length2":17}]],"length":781,"saved":false}
+{"ts":1371063376207,"patch":[[{"diffs":[[0,"#x_max\")"],[1,")"],[0,";\r\n     "]],"start1":332,"start2":332,"length1":16,"length2":17}]],"length":782,"saved":false}
+{"ts":1371063379303,"patch":[[{"diffs":[[0,"#x_max\")"],[1,".val()"],[0,");\r\n    "]],"start1":332,"start2":332,"length1":16,"length2":22}]],"length":788,"saved":false}
+{"ts":1371063382853,"patch":[[{"diffs":[[0,"x_min = "],[1,"String("],[0,"$(\"#x_mi"]],"start1":280,"start2":280,"length1":16,"length2":23}]],"length":795,"saved":false}
+{"ts":1371063386269,"patch":[[{"diffs":[[0,"#x_min\")"],[1,".val())"],[0,";\r\n     "]],"start1":298,"start2":298,"length1":16,"length2":23}]],"length":802,"saved":false}
+{"ts":1371063390760,"patch":[[{"diffs":[[0,"r x_funct = "],[1,"String("],[0,"$(\"#f(x)\");\r"]],"start1":243,"start2":243,"length1":24,"length2":31}]],"length":809,"saved":false}
+{"ts":1371063397302,"patch":[[{"diffs":[[0,"\"#f(x)\")"],[1,".val())"],[0,";\r\n     "]],"start1":264,"start2":264,"length1":16,"length2":23}]],"length":816,"saved":false}
+{"ts":1371063400217,"patch":[[{"diffs":[[0," plot = "],[1,"String("],[0,"$(\"#equa"]],"start1":210,"start2":210,"length1":16,"length2":23}]],"length":823,"saved":false}
+{"ts":1371063402823,"patch":[[{"diffs":[[0,"equals\")"],[1,".val())"],[0,";\r\n     "]],"start1":229,"start2":229,"length1":16,"length2":23}]],"length":830,"saved":false}
+{"ts":1371063417425,"patch":[[{"diffs":[[0,"= graph("],[-1,"token_array"],[0,");\r\n    "]],"start1":455,"start2":455,"length1":27,"length2":16}]],"length":819,"saved":false}
+{"ts":1371063419062,"patch":[[{"diffs":[[0,"esult = "],[-1,"graph"],[0,"();\r\n   "]],"start1":449,"start2":449,"length1":21,"length2":16}]],"length":814,"saved":false}
+{"ts":1371063420727,"patch":[[{"diffs":[[0,"esult = "],[1,"graph"],[0,"();\r\n   "]],"start1":449,"start2":449,"length1":16,"length2":21}]],"length":819,"saved":false}
+{"ts":1371063432518,"patch":[[{"diffs":[[0,"uals\").val());\r\n"],[1,"        var canvas =\r\n"],[0,"        var x_fu"]],"start1":231,"start2":231,"length1":32,"length2":54}]],"length":841,"saved":false}
+{"ts":1371063433315,"patch":[[{"diffs":[[0,"canvas ="],[1," "],[0,"\r\n      "]],"start1":259,"start2":259,"length1":16,"length2":17}]],"length":842,"saved":false}
+{"ts":1371063435395,"patch":[[{"diffs":[[0,"anvas = "],[1,"()"],[0,"\r\n      "]],"start1":260,"start2":260,"length1":16,"length2":18}]],"length":844,"saved":false}
+{"ts":1371063445287,"patch":[[{"diffs":[[0," var plot = "],[-1,"String("],[0,"$(\"#equals\")"]],"start1":206,"start2":206,"length1":31,"length2":24}]],"length":837,"saved":false}
+{"ts":1371063448141,"patch":[[{"diffs":[[0,"quals\")."],[-1,"val())"],[0,";\r\n     "]],"start1":223,"start2":223,"length1":22,"length2":16}]],"length":831,"saved":false}
+{"ts":1371063449883,"patch":[[{"diffs":[[0,"equals\")"],[-1,"."],[0,";\r\n     "]],"start1":222,"start2":222,"length1":17,"length2":16}]],"length":830,"saved":false}
+{"ts":1371063473663,"patch":[[{"diffs":[[0,"anvas = "],[1,"#"],[0,"()\r\n    "]],"start1":246,"start2":246,"length1":16,"length2":17}]],"length":831,"saved":false}
+{"ts":1371063474763,"patch":[[{"diffs":[[0,"vas = #("],[1,"\"\""],[0,")\r\n     "]],"start1":248,"start2":248,"length1":16,"length2":18}]],"length":833,"saved":false}
+{"ts":1371063477232,"patch":[[{"diffs":[[0,"anvas = "],[-1,"#"],[0,"(\"\")\r\n  "]],"start1":246,"start2":246,"length1":17,"length2":16}]],"length":832,"saved":false}
+{"ts":1371063478312,"patch":[[{"diffs":[[0,"anvas = "],[1,"$"],[0,"(\"\")\r\n  "]],"start1":246,"start2":246,"length1":16,"length2":17}]],"length":833,"saved":false}
+{"ts":1371063480088,"patch":[[{"diffs":[[0,"as = $(\""],[1,"#"],[0,"\")\r\n    "]],"start1":249,"start2":249,"length1":16,"length2":17}]],"length":834,"saved":false}
+{"ts":1371063482246,"patch":[[{"diffs":[[0,"s = $(\"#"],[1,"canvas"],[0,"\")\r\n    "]],"start1":250,"start2":250,"length1":16,"length2":22}]],"length":840,"saved":false}
+{"ts":1371063484242,"patch":[[{"diffs":[[0,"s = $(\"#"],[-1,"canvas"],[0,"\")\r\n    "]],"start1":250,"start2":250,"length1":22,"length2":16}]],"length":834,"saved":false}
+{"ts":1371063485404,"patch":[[{"diffs":[[0,"s = $(\"#"],[1,"window"],[0,"\")\r\n    "]],"start1":250,"start2":250,"length1":16,"length2":22}]],"length":840,"saved":false}
+{"ts":1371063487441,"patch":[[{"diffs":[[0,"window\")"],[1,";"],[0,"\r\n      "]],"start1":258,"start2":258,"length1":16,"length2":17}]],"length":841,"saved":false}
+{"ts":1371063507442,"patch":[[{"diffs":[[0,"$(\"#"],[-1,"window"],[1,"test"],[0,"\");\r"]],"start1":254,"start2":254,"length1":14,"length2":12}]],"length":839,"saved":false}
+{"ts":1371063523526,"patch":[[{"diffs":[[0,"ion(){\r\n"],[1,"            al\r\n"],[0,"        "]],"start1":444,"start2":444,"length1":16,"length2":32}]],"length":855,"saved":false}
+{"ts":1371063525074,"patch":[[{"diffs":[[0,"      al"],[1,"ert()"],[0,"\r\n      "]],"start1":458,"start2":458,"length1":16,"length2":21}]],"length":860,"saved":false}
+{"ts":1371063526249,"patch":[[{"diffs":[[0,"  alert("],[1,"hell"],[0,")\r\n     "]],"start1":462,"start2":462,"length1":16,"length2":20}]],"length":864,"saved":false}
+{"ts":1371063527366,"patch":[[{"diffs":[[0,"ert(hell"],[1,"o!"],[0,")\r\n     "]],"start1":466,"start2":466,"length1":16,"length2":18}]],"length":866,"saved":false}
+{"ts":1371063528116,"patch":[[{"diffs":[[0,"(hello!)"],[1,";"],[0,"\r\n      "]],"start1":469,"start2":469,"length1":16,"length2":17}]],"length":867,"saved":false}
+{"ts":1371063534577,"patch":[[{"diffs":[[0,"= graph("],[1,"canvas,"],[0,");\r\n    "]],"start1":503,"start2":503,"length1":16,"length2":23}]],"length":874,"saved":false}
+{"ts":1371063539221,"patch":[[{"diffs":[[0,"(canvas,"],[1,"x_funct, "],[0,");\r\n    "]],"start1":510,"start2":510,"length1":16,"length2":25}]],"length":883,"saved":false}
+{"ts":1371063540063,"patch":[[{"diffs":[[0,"x_funct,"],[-1," "],[0,");\r\n    "]],"start1":518,"start2":518,"length1":17,"length2":16}]],"length":882,"saved":false}
+{"ts":1371063542978,"patch":[[{"diffs":[[0,"x_funct,"],[1,"x_min, "],[0,");\r\n    "]],"start1":518,"start2":518,"length1":16,"length2":23}]],"length":889,"saved":false}
+{"ts":1371063544656,"patch":[[{"diffs":[[0,",x_min, "],[1,"x_max"],[0,");\r\n    "]],"start1":525,"start2":525,"length1":16,"length2":21}]],"length":894,"saved":false}
+{"ts":1371063550765,"patch":[[{"diffs":[[0,"t(hello!"],[1,"\"\""],[0,");\r\n    "]],"start1":468,"start2":468,"length1":16,"length2":18}]],"length":896,"saved":false}
+{"ts":1371063552962,"patch":[[{"diffs":[[0,"(hello!\""],[1,"hello!"],[0,"\");\r\n   "]],"start1":469,"start2":469,"length1":16,"length2":22}]],"length":902,"saved":false}
+{"ts":1371063555749,"patch":[[{"diffs":[[0,"  alert("],[-1,"hello!"],[0,"\"hello!\""]],"start1":462,"start2":462,"length1":22,"length2":16}]],"length":896,"saved":false}
+{"ts":1371063560836,"patch":[[{"diffs":[[0,");\r\n"],[-1,"            $(\".output\").html(result);\r\n            token_array = [result];\r\n"],[0,"    "]],"start1":540,"start2":540,"length1":85,"length2":8}]],"length":819,"saved":false}
+{"ts":1371063622620,"patch":[[{"diffs":[[0,"$(\"#"],[-1,"equals"],[1,"plot"],[0,"\");\r"]],"start1":218,"start2":218,"length1":14,"length2":12}]],"length":817,"saved":false}
+{"ts":1371063675006,"patch":[[{"diffs":[[0,"            "],[1,"//"],[0,"return resul"]],"start1":542,"start2":542,"length1":24,"length2":26}]],"length":819,"saved":false}
+{"ts":1371063678950,"patch":[[{"diffs":[[0,"            "],[1,"//"],[0,"var result ="]],"start1":480,"start2":480,"length1":24,"length2":26}]],"length":821,"saved":false}
+{"ts":1371064235927,"patch":[[{"diffs":[[0,");\r\n"],[-1,"        var x_funct = String($(\"#f(x)\").val());\r\n        var x_min = String($(\"#x_min\").val());\r\n        var x_max = String($(\"#x_max\").val());\r\n"],[0,"    "]],"start1":261,"start2":261,"length1":153,"length2":8}]],"length":676,"saved":false}
+{"ts":1371064238120,"patch":[[{"diffs":[[0,"\"hello!\");\r\n"],[1,"                    var x_funct = String($(\"#f(x)\").val());\r\n        var x_min = String($(\"#x_min\").val());\r\n        var x_max = String($(\"#x_max\").val());\r\n"],[0,"            "]],"start1":323,"start2":323,"length1":24,"length2":181}]],"length":833,"saved":false}
+{"ts":1371064242062,"patch":[[{"diffs":[[0,"            "],[-1,"    v"],[0,"ar x_funct ="]],"start1":339,"start2":339,"length1":29,"length2":24}]],"length":828,"saved":false}
+{"ts":1371064242749,"patch":[[{"diffs":[[0,"        "],[1,"v"],[0,"ar x_fun"]],"start1":343,"start2":343,"length1":16,"length2":17}]],"length":829,"saved":false}
+{"ts":1371064246875,"patch":[[{"diffs":[[0,"            "],[-1,"    "],[0,"var x_funct "]],"start1":335,"start2":335,"length1":28,"length2":24}]],"length":825,"saved":false}
+{"ts":1371064249032,"patch":[[{"diffs":[[0,");\r\n        "],[1,"    "],[0,"var x_min = "]],"start1":384,"start2":384,"length1":24,"length2":28}]],"length":829,"saved":false}
+{"ts":1371064250355,"patch":[[{"diffs":[[0,");\r\n        "],[1,"    "],[0,"var x_max = "]],"start1":436,"start2":436,"length1":24,"length2":28}]],"length":833,"saved":false}
+{"ts":1371064327259,"patch":[[{"diffs":[[0,"){\r\n"],[-1,"            alert(\"hello!\");\r\n"],[0,"    "]],"start1":301,"start2":301,"length1":38,"length2":8}]],"length":803,"saved":false}

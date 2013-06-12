@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Graphing Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://web.mit.edu/6.mitx/www/calculator.js"></script>
+<script src="graphcalc.js"></script>
+<link rel="stylesheet" type="text/css" href="graphcalc.css">
+    <style>
+    .graphcalc{
+    width: 400px;
+    height: 420px;
+    background-color: #E0E0E0;
+}
+    </style>
+    <style>
+    #test{
+        border: 1px solid black;
+        background-color: white;
+        width: 355px;
+        height:300px;
+        margin: 20px;
+    }
+    </style>
+</head>
+<body>
+<div class="graphcalc">
+<div class = "output"> <canvas id="test" width="225" height="300" border=1px></canvas></div>
+<div class = "input" id = "f(x)">f(x)<input size = 20></input></div>
+<div class = "input" id = "x_min">x min<input size = 10></input>    x max<input size = 10 id = "x_max"></input></div>
+<div><button id = "plot">Plot</button></div>
+</div>
+</body>
+</html>

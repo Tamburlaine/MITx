@@ -12,6 +12,8 @@
     margin-bottom: 5px;
     margin-left: 3px;
     margin-right: 3px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .calculator .output{
