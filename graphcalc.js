@@ -1,23 +1,17 @@
 var graphcalc = (function () {
     var exports = {};  // functions,vars accessible from outside
-    function graph(canvas,expression,x1,x2) {
+    function graph(canvas,expression,x_min,x_max) {
         var JQcanvas = canvas;
         var DOMcanvas = JQcanvas[0];
 		DOMcanvas.width = canvas.width();
 		DOMcanvas.height = canvas.height();
         var ctx = DOMcanvas.getContext('2d');
         
-        ctx.beginPath();
-        ctx.fillStyle="black";
-        ctx.font="15px Georgia";
-        ctx.textAlign="left"; //also could do left, right
-        ctx.textBaseline="middle"; //vertical centering, can also do top, bottom, alphabetic
-        console.log("graphing!", x1, x2);
-        
         try {
-            console.log("expression is: " +expression);
+            console.log("expression is: " + expression);
             var tree = calculator.parse(expression);
-            for(var x_val= x1; x_val<=x2; x_val+=((x2-x1)/800)){
+			console.log("tree is: "+ tree);
+            for(var x_val= x_min; x_val<=x_max; x_val+=((x_max-x_min)/800)){
                 var y_val = calculator.evaluate(tree,{e: Math.E, pi: Math.PI, x: x_val})*20;
                 console.log("for loop", x_val, 150-y_val, (x2-x1)/100);
                 console.log("ctx is: " + ctx);
@@ -42,29 +36,41 @@ var graphcalc = (function () {
     function setup(div) {
         var plot = $("#plot");
 		var canvas = $("#graphwindow");
-		var clear = $("#clear");
+		var clear = $(".clear"); //initialize button variables
+		var equals = $(".equals");
+		var token = $(".token");
+		var token_array = [];
         plot.bind("click", function(){
-			var f_x = $(".x_funct");
-			var x_funct = String(f_x.val());
+			var x_funct = String($(".x_funct").val());
             var x_min = parseFloat($("#x_min").val());
+			alert("x_min: " + x_min);
             var x_max = parseFloat($("#x_max").val());
             graph(canvas,x_funct,x_min, x_max);
         });
-		var equals = $(".equals");
 		equals.bind("click", function(){
-			var f_x = $(".x_funct");
-			var x_funct = String(f_x.val());
-			equation_display(canvas, x_funct);
+			var x_funct = String($(".x_funct").val());
+			tokenarray_display(canvas, x_funct);
 		});
 		clear.bind("click",function(){
 			var DOMcanvas = canvas[0];
 			var ctx = DOMcanvas.getContext('2d');
 			ctx.clearRect(0,0,canvas.width(),canvas.height());
+			token_array = [];
+			equation_display(canvas, token_array);
 		});
+		$("token").bind("click", function(evt){
+			console.log(evt);
+			var button = $(this);
+			var button_value = button.attr("data-value");
+			token_array.push(button_value);
+			console.log(token_array);
+			equation_display(canvas, token_array);
+		});
+		
     };
 
-	//called when equals button is pushed, displays answer onscreen
-	function equation_display(canvas, x_funct){
+	//called when equals button is pushed, displays x_funct onscreen
+	function answer_display(canvas, x_funct){
 		var to_display = calculate(x_funct);
 		var JQcanvas = canvas;
         var DOMcanvas = JQcanvas[0];
@@ -80,6 +86,21 @@ var graphcalc = (function () {
 		ctx.fillText(to_display,canvas.width()-10,10);     //string, x, y
 	};
 	
+	function tokenarray_display(canvas, x_funct){
+		var to_display = calculate(x_funct);
+		var JQcanvas = canvas;
+        var DOMcanvas = JQcanvas[0];
+		DOMcanvas.width = canvas.width();
+		DOMcanvas.height = canvas.height();
+        var ctx = DOMcanvas.getContext('2d');
+		
+		ctx.beginPath();
+        ctx.fillStyle="black";
+        ctx.font="15px Georgia";
+        ctx.textAlign="right"; //also could do left, center, right
+        ctx.textBaseline="middle";
+		ctx.fillText(to_display,canvas.width()-10,10);     //string, x, y
+	};
 	
 	//calls evaluate on an expression string, returns the result
 	function calculate(text) {

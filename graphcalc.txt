@@ -2,18 +2,19 @@ GRAPHCALC TODO:
 -front end
 	- rough cut + full functionality
 	- make it all pretty!
-- make the input work with the back end
-- make the buttons work with the back end
+- make the graphing work (think this is OK for now)
+- make the buttons work
 - make the widget minimizable
 - make the graphing functionality better
 - make the enter key graph if there is an x and evaluate otherwise
 - add support for sin, cos, etc.
+- make the display show some history
 - mouse-hover to show value on graph
 - increase error support
 - tidy up code -- don't repeat yourself!
 
 
 
-GRAPHCALCDONE
+GRAPHCALC DONE:
 - front end -- rough cut
 - make the answer display on the screen if not a function
