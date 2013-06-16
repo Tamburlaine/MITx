@@ -13,24 +13,30 @@ var graphcalc = (function () {
             var tree = calculator.parse(expression);
 			var y_min = 0; // set y_min and y_max both equal to zero, will adjust
 			var y_max = 0;
+			var y_array = new Array();
             for(var x_val= x_min; x_val<=x_max; x_val+=((x_max-x_min)/800)){
                 var y_val = calculator.evaluate(tree,{e: Math.E, pi: Math.PI, x: x_val});
+				y_array.push(y_val);
 				//this if/else statement updates the bounds of the Y window
 				if (y_val < y_min && y_val >= -100*(x_max - x_min)){
 					y_min = y_val;
 				} else if (y_val > y_max && y_val <= 100*(x_max-x_min)){
 					y_max = y_val;
 				};
-				plotHeight = y_min-y_max;
-				plotWidth = x_max-x_min;
-                ctx.lineTo(x_val*DOMcanvas.width/plotWidth, DOMcanvas.height + y_val*DOMcanvas.height/plotHeight);
-				console.log(x_val, y_val, x_val*DOMcanvas.width/plotWidth, DOMcanvas.height/2 + y_val*DOMcanvas.height/plotHeight, y_min, y_max);
+			};
+			plotHeight = y_min-y_max;
+			plotWidth = x_max-x_min;
+			x_val = x_min;
+			for (var i = 0; i<= y_array.length; i++){
+                ctx.lineTo(x_val*DOMcanvas.width/plotWidth, DOMcanvas.height + y_array[i]*DOMcanvas.height/plotHeight);
+				console.log(x_val, y_array[i], x_val*DOMcanvas.width/plotWidth, DOMcanvas.height/2 + y_array[i]*DOMcanvas.height/plotHeight, y_min, y_max);
                 ctx.lineWidth=1;
                 ctx.strokeStyle="red";
                 ctx.lineCap="round";
                 ctx.lineJoin="round";
                 ctx.stroke(); //we're putting pixels along this line
-            }
+				x_val += ((x_max - x_min)/800);
+            };
             ctx.lineWidth = 2;
             ctx.strokeStyle = "#000000"
             ctx.stroke;
