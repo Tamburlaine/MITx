@@ -1,7 +1,7 @@
 var graphcalc = (function () {
     var exports = {};  // functions,vars accessible from outside
 
-//called by 
+//called when plot is pressed
     function graph(canvas,expression,x_min,x_max) {
         var JQcanvas = canvas;
         var DOMcanvas = JQcanvas[0];
@@ -10,12 +10,21 @@ var graphcalc = (function () {
         var ctx = DOMcanvas.getContext('2d');
         
         try {
-            console.log("expression is: " + expression);
             var tree = calculator.parse(expression);
-			console.log("tree is: "+ tree);
+			var y_min = 0; // set y_min and y_max both equal to zero, will adjust
+			var y_max = 0;
             for(var x_val= x_min; x_val<=x_max; x_val+=((x_max-x_min)/800)){
-                var y_val = calculator.evaluate(tree,{e: Math.E, pi: Math.PI, x: x_val})*20;
-                ctx.lineTo(255*(x_val-x_min)/(x_max-x_min), 150 - (y_val));
+                var y_val = calculator.evaluate(tree,{e: Math.E, pi: Math.PI, x: x_val});
+				//this if/else statement updates the bounds of the Y window
+				if (y_val < y_min && y_val >= -100*(x_max - x_min)){
+					y_min = y_val;
+				} else if (y_val > y_max && y_val <= 100*(x_max-x_min)){
+					y_max = y_val;
+				};
+				plotHeight = y_min-y_max;
+				plotWidth = x_max-x_min;
+                ctx.lineTo(x_val*DOMcanvas.width/plotWidth, DOMcanvas.height + y_val*DOMcanvas.height/plotHeight);
+				console.log(x_val, y_val, x_val*DOMcanvas.width/plotWidth, DOMcanvas.height/2 + y_val*DOMcanvas.height/plotHeight, y_min, y_max);
                 ctx.lineWidth=1;
                 ctx.strokeStyle="red";
                 ctx.lineCap="round";
@@ -29,8 +38,7 @@ var graphcalc = (function () {
         catch(e) {
              ctx.fillText(e,0,100);
         }
-    }
-   
+    };
    //setup is called once when the document is ready
    //binds the buttons to their proper values
     function setup(div) {
