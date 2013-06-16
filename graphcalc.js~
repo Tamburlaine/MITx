@@ -1,7 +1,5 @@
 var graphcalc = (function () {
     var exports = {};  // functions,vars accessible from outside
-
-//called by 
     function graph(canvas,expression,x_min,x_max) {
         var JQcanvas = canvas;
         var DOMcanvas = JQcanvas[0];
@@ -15,7 +13,9 @@ var graphcalc = (function () {
 			console.log("tree is: "+ tree);
             for(var x_val= x_min; x_val<=x_max; x_val+=((x_max-x_min)/800)){
                 var y_val = calculator.evaluate(tree,{e: Math.E, pi: Math.PI, x: x_val})*20;
-                ctx.lineTo(255*(x_val-x_min)/(x_max-x_min), 150 - (y_val));
+                console.log("for loop", x_val, 150-y_val, (x2-x1)/100);
+                console.log("ctx is: " + ctx);
+                ctx.lineTo(255*(x_val-x1)/(x2-x1), 150 - (y_val));
                 ctx.lineWidth=1;
                 ctx.strokeStyle="red";
                 ctx.lineCap="round";
@@ -41,9 +41,10 @@ var graphcalc = (function () {
 		var token = $(".token");
 		var token_array = [];
         plot.bind("click", function(){
-		var x_funct = String($(".x_funct").val());
-            var x_min = parseFloat($(".x_min").val());
-            var x_max = parseFloat($(".x_max").val());
+			var x_funct = String($(".x_funct").val());
+            var x_min = parseFloat($("#x_min").val());
+			alert("x_min: " + x_min);
+            var x_max = parseFloat($("#x_max").val());
             graph(canvas,x_funct,x_min, x_max);
         });
 		equals.bind("click", function(){
