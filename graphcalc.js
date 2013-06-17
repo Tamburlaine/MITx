@@ -55,7 +55,7 @@ var graphcalc = (function () {
 		var token = $(".token");
 		var token_array = [];
         plot.bind("click", function(){
-		var x_funct = String($(".x_funct").val());
+			var x_funct = String($(".x_funct").val());
             var x_min = parseFloat($(".x_min").val());
             var x_max = parseFloat($(".x_max").val());
             graph(canvas,x_funct,x_min, x_max);
@@ -64,20 +64,26 @@ var graphcalc = (function () {
 			var x_funct = String($(".x_funct").val());
 			tokenarray_display(canvas, x_funct);
 		});
-		clear.bind("click",function(){
+		clear.bind("click", function(){
 			var DOMcanvas = canvas[0];
 			var ctx = DOMcanvas.getContext('2d');
 			ctx.clearRect(0,0,canvas.width(),canvas.height());
 			token_array = [];
 			equation_display(canvas, token_array);
 		});
-		$("token").bind("click", function(evt){
-			console.log(evt);
+		$("token").bind("click", function(){
 			var button = $(this);
 			var button_value = button.attr("data-value");
 			token_array.push(button_value);
 			console.log(token_array);
 			equation_display(canvas, token_array);
+		});
+		$("token_bot").bind("click", function(){
+			var button = $(this);
+			var button_value = button.attr("data-value");
+			token_array.push(button_value);
+			console.log(token_array);
+			equation_display(canvas, token_array); //need to update for ., -
 		});
 		
     };
