@@ -1,4 +1,27 @@
 var quiz = (function(){
+
+	function setup(){
+		Parse.initialize("q5MA6U7C58dtdgEad3uTUmwebLvN4z1bDCd13HBK", "W3qgF2CufIHZzAmSQsUKkGnC6C23wM2AMfVUWWIr");
+		var QuestionData = Parse.Object.extend("QuestionData");
+		
+		var query = new Parse.Query(QuestionData);
+			query.get("q5MA6U7C58dtdgEad3uTUmwebLvN4z1bDCd13HBK", {
+			success: function(questionData) {
+				alert("bum success!");
+			},
+			error: function(object, error) {
+				alert("shitstorm incoming");
+				var questionData = new QuestionData();
+				questionData.set("score", 0);
+				questionData.set("currentQuestionIndex", 0);
+			}
+			});
+			
+		questionData.save();
+		
+		displayQuestion();
+	};
+	
 	
 	var questions = [{"questionText": "Sam thinks y=2x is going to ___ as x goes from 1 to 10.", 
 					"options": ["increase", "decrease", "goes up then down", "goes down then up"],
@@ -10,6 +33,9 @@ var quiz = (function(){
 
 	var answers = []; // answers from the student
 	
+	
+	//now we're messing with data storage -- Parse
+	
 	if ("currentQuestionIndex" in localStorage === false){
 		localStorage["currentQuestionIndex"] = 0;
 	};
@@ -20,6 +46,7 @@ var quiz = (function(){
 	
 	var score = localStorage["score"]; //score of the student
 	var currentQuestionIndex = localStorage["currentQuestionIndex"]; //index of the current question we are on
+
 	
 	//takes in a question index and a student's answer and returns true if ans correct
 	function checkAnswer(q, ans){
@@ -99,10 +126,6 @@ var quiz = (function(){
 		$(".scoreval").text(score);
 	};
 	
-	function setup(){
-		displayQuestion();
-	};
-	
 	var exports = {};
 	exports.setup = setup;
 	return exports;
@@ -112,7 +135,6 @@ $(document).ready(function(){
 	quiz.setup();
 	
 	var req = $.ajax({
-		async: false,
 		url:"http://localhost:8080/", data: {id: 10}
 	});
 	req.done(function(msg){
