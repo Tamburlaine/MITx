@@ -19,7 +19,7 @@
 							Comedy
 							<b class="caret"></b>
 						</a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu" id="shakesCom">
 							<li class="dropdown-submenu">
 								<a href="http://shakespeare.mit.edu/allswell/full.html">All's Well That Ends Well</a>
 									<ul class="dropdown-menu">
@@ -110,18 +110,22 @@
 						</ul>
 					</li>
 					<li class = "dropdown">
-						<a id="Comedy" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+						<a id="Tragedy" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
 						Tragedy
 						<b class="caret"></b>
 						</a>
+						<ul class = "dropdown-menu" id="shakesTrag">
+							<li class="dropdown-submenu">
+							</li>
+						</ul>
 					</li>
-					<li class = "dropdown">
+					<li class = "dropdown" id ="shakesHis">
 						<a id="Comedy" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
 						History
 						<b class="caret"></b>
 						</a>
 					</li>
-					<li class = "dropdown">
+					<li class = "dropdown" id="shakesPo">
 						<a id="Comedy" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
 						Poetry
 						<b class="caret"></b>
@@ -131,6 +135,19 @@
 			</div>
 		<div class ="shakeswindow">
 		</div>		
+		</div>
+		<div id="shakesCarousel" class="carousel-slide">
+			<div class ="carousel-inner">
+				<div class="item active">
+					<img src="" alt=""></img>
+					<div class="carousel-caption">
+						<p>Caption text here</p>
+					</div>					
+				</div>
+				<!--this is where you stopped working kipper!-->
+				<div class="">
+				</div>
+			</div>	
 		</div>
 	</div>
   </body>
