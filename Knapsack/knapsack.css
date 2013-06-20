@@ -1,0 +1,88 @@
+.knapsack {
+  width: 800px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  height: 315px;
+  background-color: white;
+  z-index: 1000;
+  padding: 0;
+  color:black ;
+}
+
+.toggleButt{
+	position: relative;
+	width: 18px;
+	height: 18px;
+	border: 1px solid black;
+	background-color: #F587AC;
+	float: right;
+}
+
+.box{
+	display: inline-block;
+	border: 1px solid black ; padding:5px; margin: 5px;
+    height:200px;
+	width:300px;
+	border: 1px solid black;
+}
+
+.sack{
+    display: inline-block;
+	height:300px;
+	width:400px;
+}
+
+.house{
+    display: inline-block;
+	height:300px;
+	width:400px;
+}
+
+.imgh{
+	margin-left: 100px;
+	margin-bottom: 1.2em;
+}
+
+.imgs{
+	margin-left: 120px;
+}
+
+.wvlab{
+	margin-left: 70px;
+}
+
+.vlab{
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.objectDiv{
+	display: inline-block;
+	margin: 5px;
+	width: 90px;
+	height: 90px;
+}
+
+.warning{
+	position: relative;
+	top:-200px;
+	left: 60px;
+	height: 300px;
+	opacity: 80;
+	display: none;
+}
+
+.warnText{
+	position: relative;
+	top: -250px;
+	left: 150px;
+	opacity: 80;
+}
+
+.warnEllipse{
+	fill:#363636;
+	stroke:#363636;
+	stroke-width:2;
+	opacity: 80;
+}
